@@ -21,6 +21,16 @@ sudo yum localinstall mysql80-community-release-el7-3.noarch.rpm
 ```
 
 **STEP 3. IMPORT PUBLIC KEY FOR MYSQL 8**
+
+Importing the public key is a security measure to verify the integrity and authenticity of the MySQL packages. This ensures:
+- **Package Authenticity**: The public key checks that the MySQL packages are genuinely from MySQL developers.
+- **Package Integrity**: Verifying the digital signature ensures packages haven't been modified or corrupted.
+- **Security**: Importing the public key prevents potential attacks from malicious or modified packages.
+
+Without this step, YUM would issue warnings about unverified packages, and you would not have the assurance that the MySQL files are legitimate.
+
+Run the command below to import the public key:
+
 ```sh
 sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
 ```
