@@ -9,6 +9,13 @@ wget https://repo.mysql.com/mysql80-community-release-el7-3.noarch.rpm
 ```
 
 **STEP 2. INSTALL MYSQL REPO LOCALLY**
+
+Installing the MySQL repository locally configures YUM to recognize the MySQL software repository, which provides access to the latest MySQL versions and updates. This repository ensures:
+- **Automatic Access to Updates**: You’ll receive MySQL updates directly through YUM, making it easy to keep MySQL secure and up-to-date.
+- **Simplified Dependency Management**: All necessary dependencies for MySQL are available through this repository, simplifying installation.
+
+Run the command below to set up the repository:
+
 ```sh
 sudo yum localinstall mysql80-community-release-el7-3.noarch.rpm
 ```
