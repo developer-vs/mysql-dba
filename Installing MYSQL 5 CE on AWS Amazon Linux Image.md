@@ -1,26 +1,14 @@
 
-## INSTALL MYSQL 8 COMMUNITY EDITION (CentOS/RHEL)
+## INSTALL MYSQL 5 COMMUNITY EDITION (CentOS/RHEL)
 
 ### INSTALLATION STEPS
 
-**STEP 1. DOWNLOAD MYSQL 8 REPOSITORY PACKAGE**
+**STEP 0. UPDATE YUM PACKAGE MANAGER**
+Before starting the installation, it’s a good practice to ensure your package manager is up to date:
 ```sh
-wget https://repo.mysql.com/mysql80-community-release-el7-3.noarch.rpm
+sudo yum update
 ```
-
-**STEP 2. INSTALL MYSQL REPO LOCALLY**
-
-Installing the MySQL repository locally configures YUM to recognize the MySQL software repository, which provides access to the latest MySQL versions and updates. This repository ensures:
-- **Automatic Access to Updates**: You’ll receive MySQL updates directly through YUM, making it easy to keep MySQL secure and up-to-date.
-- **Simplified Dependency Management**: All necessary dependencies for MySQL are available through this repository, simplifying installation.
-
-Run the command below to set up the repository:
-
-```sh
-sudo yum localinstall mysql80-community-release-el7-3.noarch.rpm
-```
-
-**STEP 3. IMPORT PUBLIC KEY FOR MYSQL 8**
+**STEP 1. IMPORT PUBLIC KEY FOR MYSQL 5**
 
 Importing the public key is a security measure to verify the integrity and authenticity of the MySQL packages. This ensures:
 - **Package Authenticity**: The public key checks that the MySQL packages are genuinely from MySQL developers.
@@ -33,6 +21,23 @@ Run the command below to import the public key:
 
 ```sh
 sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
+```
+
+**STEP 2. DOWNLOAD MYSQL 2 REPOSITORY PACKAGE**
+```sh
+wget https://repo.mysql.com/mysql57-community-release-el7-8.noarch.rpm
+```
+
+**STEP 3. INSTALL MYSQL REPO LOCALLY**
+
+Installing the MySQL repository locally configures YUM to recognize the MySQL software repository, which provides access to the latest MySQL versions and updates. This repository ensures:
+- **Automatic Access to Updates**: You’ll receive MySQL updates directly through YUM, making it easy to keep MySQL secure and up-to-date.
+- **Simplified Dependency Management**: All necessary dependencies for MySQL are available through this repository, simplifying installation.
+
+Run the command below to set up the repository:
+
+```sh
+sudo yum localinstall mysql57-community-release-el7-8.noarch.rpm
 ```
 
 **STEP 4. INSTALL MYSQL SERVER**
